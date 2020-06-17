@@ -1,5 +1,5 @@
 public class Main {
-    public static String SAMPLE = "공부해 얼른 와";
+    public static String SAMPLE = "공부해 얼른 와 공부해";
     public static String SAMPLE_2 = "실제로 결정을 해야돼";
     public static String SAMPLE_3 = "잉? 뭐지?";
     public static void main(String[] args) {
