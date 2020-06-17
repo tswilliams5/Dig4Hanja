@@ -1,14 +1,14 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HanjaReport {
     private String originalDocument;
     private int wordCount;
-    private List<String> hanjaDerivedWords;
+    private Map<String, Integer> hanjaDerivedWords;
 
     public HanjaReport(String originalDocument) {
         this.originalDocument = originalDocument;
-        hanjaDerivedWords = new ArrayList<String>();
+        hanjaDerivedWords = new HashMap<String, Integer>();
         wordCount = 0;
     }
 
@@ -31,11 +31,11 @@ public class HanjaReport {
         return hanjaDerivedWords.size();
     }
 
-    public List<String> getHanjaDerivedWords() {
+    public Map<String, Integer> getHanjaDerivedWords() {
         return hanjaDerivedWords;
     }
 
-    public void setHanjaDerivedWords(List<String> hanjaDerivedWords) {
+    public void setHanjaDerivedWords(Map<String, Integer> hanjaDerivedWords) {
         this.hanjaDerivedWords = hanjaDerivedWords;
     }
 }
