@@ -17,7 +17,7 @@ public class HanjaEngine {
         for (String word : words) {
             WordDerivation wordDerivation = deriver.deriveOrigin(word);
             if (wordDerivation.isHanja()) {
-                hanjaWords.put(word, hanjaWords.containsKey(word) ? hanjaWords.get(word) + 1 : 1);
+                hanjaWords.merge(word, 1, Integer::sum);
             }
         }
 
