@@ -1,22 +1,23 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import derivation.Deriver;
 import derivation.PracticeDeriver;
 import derivation.WordDerivation;
 import util.WordExtractor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HanjaEngine {
     public HanjaReport compute(String document) {
         HanjaReport report = new HanjaReport(document);
         List<String> words = new WordExtractor().extractWords(document);
-        List<String> hanjaWords = new ArrayList<String>();
+        Map<String, Integer> hanjaWords = new HashMap<String, Integer>();
         // implement this to hit a real API when ready
         Deriver deriver = new PracticeDeriver();
         for (String word : words) {
             WordDerivation wordDerivation = deriver.deriveOrigin(word);
             if (wordDerivation.isHanja()) {
-                hanjaWords.add(word);
+                hanjaWords.merge(word, 1, Integer::sum);
             }
         }
 
